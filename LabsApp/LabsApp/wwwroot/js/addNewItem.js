@@ -10,7 +10,7 @@
         for (const pair of formData.entries()) {
             formvals[pair[0]] = pair[1];
         }
-        formvals.IsVisible = formvals.IsVisible == 'true' ? true : false;
+        formvals.IsVisible = document.getElementById('IsVisible').checked;
         const requestData = {
             method: 'POST',
             headers: {

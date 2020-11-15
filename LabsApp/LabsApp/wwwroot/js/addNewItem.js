@@ -10,8 +10,13 @@
         for (const pair of formData.entries()) {
             formvals[pair[0]] = pair[1];
         }
+        formvals.IsVisible = formvals.IsVisible == 'true' ? true : false;
         const requestData = {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
             body: JSON.stringify(formvals)
         };
         const response = await fetch('/api/Ajax', requestData);

@@ -26,5 +26,11 @@ namespace LabsApp.Controllers
             };
             return View("CompanyAdded",viewModel);
         }
+
+        [HttpGet]
+        public IActionResult List()
+        {
+            return View();
+        }
     }
 }

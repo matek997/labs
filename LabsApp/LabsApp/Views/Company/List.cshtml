@@ -1,0 +1,45 @@
+﻿@model CompanyModel
+
+@{ ViewData["Title"] = "Index"; }
+
+<style>
+    .div-table{
+        display:table;
+    }
+    .div-table > div{
+        display:table-row-group;
+    }
+        .row{
+            display: table-row;
+        }
+        .div-table > div > form> div >div {
+            display: table-cell;
+            text-align:center;
+        }
+</style>
+<h1>Companies</h1>
+
+<div class="div-table">
+    <div id="table-head">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div>@Html.LabelFor(x => x.Name, "Company name")</div>
+            <div>@Html.LabelFor(x => x.Description, "Company description")</div>
+            <div>@Html.LabelFor(x => x.IsVisible, "Visibility", new { @class = "form-check-label" })</div>
+        </div>
+        <div class="row">
+            <div>@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })</div>
+            <div>@Html.TextBoxFor(x => x.Description, new { @class = "form-control" })</div>
+            <div>@Html.CheckBoxFor(x => x.IsVisible)</div>
+        </div>
+    }
+    </div>
+    <div id="table-body"></div>
+</div>
+
+
+
+@section Scripts {
+<script src="~/js/listview.js"></script>
+}
